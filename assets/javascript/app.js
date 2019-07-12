@@ -15,7 +15,7 @@ var questionObject = {
         "Blue",
         "42",
     ],
-    wrongAnswers = {
+    wrongAnswers: {
         q1: ["Paul","Peter","Philip",],
         q2: ["Red","Yellow","Brown",],
         q3: ["33","69","3",],
@@ -30,13 +30,27 @@ function decrement() {
     number--;
     $("#showTimer").html(number);
     if (number == 0) {
-        setTimeout( function(){ alert("Time Up!") }, 0) //setting timeout to 0 will still allow the code within to only run after the current stack is clear
+        // setTimeout( function(){ alert("Time Up!") }, 0) //setting timeout to 0 will still allow the code within to only run after the current stack is clear
+        // setTimeout( function(){ alert("Time Up!") }, 0)
+        $("#showQuestion").empty()
+        $("#showQuestion").append("Time's Up!!!")
+        // set a timeout and call next question here
+
+        
         clearInterval(intervalId);
+
     }
 }
 
-intervalId = setInterval(decrement, 100);
 
+
+
+
+
+
+// Running the Game
+
+// intervalId = setInterval(decrement, 100);
 
 
 
