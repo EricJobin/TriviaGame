@@ -85,23 +85,30 @@ function callButton(){
 
     // this part writes the other answers
 
-    var x=0;
-    ranNum = (Math.floor(Math.random()*buttonsLeft.length));
-    var thisButt=buttonsLeft[ranNum]; console.log("thisButt "+thisButt);
+    // var x=0;
 
-    $(`#butt${thisButt}`).empty(); console.log(`#butt${thisButt}`);
+    for (var x=0;x<3;x++){
+
+        ranNum = (Math.floor(Math.random()*buttonsLeft.length));
+        var thisButt=buttonsLeft[ranNum]; console.log("thisButt "+thisButt);
+
+        $(`#butt${thisButt}`).empty(); console.log(`#butt${thisButt}`);
 
 
-    // console.log("questionObject.wrongAnswers "+questionObject.wrongAnswers);
-    // console.log(questionNumber);
-    // console.log(questionObject.wrongAnswers[`q0`][0])
-    // console.log("x: "+x);
-    // console.log();
-    
-    $(`#butt${thisButt}`).append(questionObject.wrongAnswers[`q${questionNumber}`][x]); //undefined
-    // debugger
-    buttonsLeft[ranNum]=buttonsLeft[(buttonsLeft.length-1)];
-    buttonsLeft.pop();
+        // console.log("questionObject.wrongAnswers "+questionObject.wrongAnswers);
+        // console.log(questionNumber);
+        // console.log(questionObject.wrongAnswers[`q0`][0])
+        // console.log("x: "+x);
+        // console.log();
+        
+        $(`#butt${thisButt}`).append(questionObject.wrongAnswers[`q${questionNumber}`][x]); //undefined
+        // debugger
+        buttonsLeft[ranNum]=buttonsLeft[(buttonsLeft.length-1)];
+        buttonsLeft.pop();
+
+
+    }
+
 
 
 
