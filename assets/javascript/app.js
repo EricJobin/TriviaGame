@@ -79,6 +79,7 @@ function callButton(){
 }
 
 function newGame(){
+    $("#gameOverDiv").empty();
     timerNumber = 10;
     rightAnswers=0;
     wrongAnswers=0;
@@ -87,18 +88,17 @@ function newGame(){
 }
 
 function checkEndGame(){
-    if (questionNumber >= questionObject.questionArray.length){
+    if (questionNumber >= questionObject.questionArray.length){ // Displays Game Over Screen, game stats, new game button
         //Gave Over
         $("#showQuestion").empty();
         $("#showQuestion").append("Game Over");
         setTimeout(function(){
             $("#showQuestion").append("<br>Correct Answers: "+rightAnswers);
             $("#showQuestion").append("<br>Wrong Answers:   "+wrongAnswers);
+            $("#gameOverDiv").append("<button type='button' class='btn btn-primary mt-4' id='gameOverDiv'>New Game</button>");
         }, 500);
-
-        // setTimeout(function(){   }, 0);  Call a function in here to set up a new game by clicking a button
     }
-    else{
+    else{ // If game is not over, call the next game, reset timer to 10
         callQuestion()
         timerNumber = 10;
     }
@@ -133,8 +133,11 @@ $(document).ready(function() {
         }
         buttonClickedThisRound =true;
     });
+    $("#gameOverDiv").on("click", function(){
+        newGame()
+    });
 });
 
 
-
+// <div id="gameOverDiv"></div>
 // setTimeout(function(){checkEndGame()}, 0);
