@@ -33,16 +33,16 @@ var questionObject = {
 
 function decrement() {
     timerNumber--;
-    $("#showTimer").html(timerNumber);
+    $("#showTimer").html(`<h3>${timerNumber}</h3>`);
     if (timerNumber == 0) {
         buttonClickedThisRound =true; //This will stop any button clicks after the timer is up
         wrongAnswers++;
         $("#showQuestion").empty();
-        $("#showQuestion").append("Time's Up!!!");
+        $("#showQuestion").append("<h1>Time's Up!!!</h1>");
         clearInterval(intervalId);
         setTimeout(function(){
             $("#showQuestion").empty();
-            $("#showQuestion").append("The correct answer was "+questionObject.answerArray[questionNumber-1]);      
+            $("#showQuestion").append("<h2>The correct answer was "+questionObject.answerArray[questionNumber-1]+"</h2>");      
             setTimeout(function(){checkEndGame()}, 1500);
         }, 1500);
     }
@@ -52,7 +52,7 @@ function callQuestion(){
     setTimeout(function(){ //I don't understand why I need a timeout function here, but the question wasn't rendering without it
         buttonClickedThisRound = false;
         $("#showQuestion").empty();
-        $("#showQuestion").append(questionObject.questionArray[questionNumber]);
+        $("#showQuestion").append(`<h2>${questionObject.questionArray[questionNumber]}<h2>`);
         callButton()
         setTimeout(function(){questionNumber++}, 0);
         setTimeout(function(){intervalId = setInterval(decrement, 500)}, 0);
@@ -91,10 +91,10 @@ function checkEndGame(){
     if (questionNumber >= questionObject.questionArray.length){ // Displays Game Over Screen, game stats, new game button
         //Gave Over
         $("#showQuestion").empty();
-        $("#showQuestion").append("Game Over");
+        $("#showQuestion").append("<h1>Game Over</h1>");
         setTimeout(function(){
-            $("#showQuestion").append("<br>Correct Answers: "+rightAnswers);
-            $("#showQuestion").append("<br>Wrong Answers:   "+wrongAnswers);
+            $("#showQuestion").append(`<br><h2>Correct Answers: ${rightAnswers}</h2>`);
+            $("#showQuestion").append(`<br><h2>Wrong Answers:   ${wrongAnswers}</h2>`);
             $("#gameOverDiv").append("<button type='button' class='btn btn-primary mt-4' id='gameOverDiv'>New Game</button>");
         }, 500);
     }
@@ -116,16 +116,16 @@ $(document).ready(function() {
         if(buttonClickedThisRound==false){// This is to ensure that only one button click is registered each round
             if (event.currentTarget.id == "butt"+correctAnswerButton){
                 $("#showQuestion").empty();
-                $("#showQuestion").append("Correct!!!");
+                $("#showQuestion").append("<h1>Correct!!!</h1>");
                 rightAnswers++;
                 setTimeout(function(){checkEndGame()}, 1500);
             }
             else{
                 $("#showQuestion").empty();
-                $("#showQuestion").append("Wrong Answer");
+                $("#showQuestion").append("<h1>Wrong Answer</h1>");
                 setTimeout(function(){
                     $("#showQuestion").empty();
-                    $("#showQuestion").append("The correct answer was "+questionObject.answerArray[questionNumber-1]);
+                    $("#showQuestion").append(`<h2>The correct answer was ${questionObject.answerArray[questionNumber-1]}</h2>`);
                 }, 1500);
                 wrongAnswers++;
                 setTimeout(function(){checkEndGame()}, 3000);

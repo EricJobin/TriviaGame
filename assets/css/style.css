@@ -1,3 +1,44 @@
 /* CSS for Trivia Game */
 
 
+
+.btn{
+    min-width: 150px;
+}
+
+h1{/* Time Up, Game Over, Correct!!!, Wrong Answer */
+    /* border: 1px black solid; */
+    text-align: center;
+
+
+
+}
+
+h2{/* Questions, Scores, Correct answers after wrong guess */
+    /* border: 1px black solid; */
+    margin-left: 5%;
+}
+
+h3{/* Timer */
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+
+}
+
+.toprow{
+    height: 50vh;
+    /* position: relative; */
+
+}
+
+.jumbotron{
+    padding: 10px;
+    margin-top: 10px;
+    position: relative;
+    
+}
+
+/*  */
