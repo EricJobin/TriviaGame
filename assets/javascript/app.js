@@ -14,13 +14,15 @@ var questionObject = {
 
     questionArray: [
         "Who is the Outer God known as The Black Goat of the Woods with a Thousand Young, who gave birth to, among other things, the Dark Young?",
-        "This Outer God knows the gate, and is the gate. They are the key and the guardian of the gate. Past, present, future, are all in one in them. They know where the Old Ones broke through of old, and where They shall break through again. Of whom do I speak?",
-        "Know also as the Blind Idiot God, the Nuclear Chaos, the Daemon Sultan, this being is believed to sleep at the center of everything, and should it ever awake, the universe, which is but its dream, shall disappear. Who is this?",
+        "This Outer God knows the gate, and is the gate. They are the key and the guardian of the gate. Past, present, future, are all one in them. Of whom do I speak?",
+        "Known also as the Blind Idiot God, the Nuclear Chaos, the Daemon Sultan, this being is slumbers, and should it ever awake, the universe, which is but its dream, shall disappear. Who is this?",
         "Who acts as a messenger for the Outer Gods and has a thousand other forms, including The Crawling Chaos, The Black Pharaoh, The Haunter of the Dark and The Faceless God?",
         "What is the name of the book that was written in the 8th century, bound in flesh, and written in human blood, that contains the history of that which came before man, and knowledge that man was not meant to know?",
         "What is the name of the city that is characterized by bizarre cyclopean architecture and non-Euclidean geometry, that is located deep under the Pacific Ocean, and is where Great Cthulhu sleeps?",
         "What is the unspeakable name of the one who is also known as The Unspeakable One, Him Who Is Not to be Named, The King in Yellow and The Yellow Sign?",
         "What is the name for the extra-dimensional creatures capable of breaking into our dimension at any point where an angle is formed, that feed on their victims with hollow proboscises?",
+        "Miskatonic University is located in located in which fictional city?",
+        "Often cited as the creator of the Mythos, this author is known for such stories as ‘The Call of Cthulhu’, ‘At the Mountains of Madness’ and ‘The Shadow over Innsmouth’.",
     ],
     answerArray: [
         "Shub-Niggurath",
@@ -31,6 +33,8 @@ var questionObject = {
         "R'lyeh",
         "Hastur",
         "Hounds of Tindalos",
+        "Arkham",
+        "Howard Phillips Lovecraft",
     ],
     wrongAnswers: {
         q0: ["Tshup Aklathep","Azathoth","Lavinia Whateley",],
@@ -41,6 +45,8 @@ var questionObject = {
         q5: ["Atlantis","Dunwich","Heracleion",],
         q6: ["Voldemort","Candyman","Mary Tudor",],
         q7: ["Strix","Vampire Ground Finch","Shai-Hulud",],
+        q8: ["Gotham","Ankh-Morpork","Beantown",],
+        q9: ["August Derleth","Robert W. Chambers","Lord Dunsany",],
     },
 };
 
