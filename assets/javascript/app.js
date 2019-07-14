@@ -1,13 +1,14 @@
 // Javascript for Trivia Game
 
 // Global Variables
-var number = 20;
+var timerNumber = 10;
 var intervalId;
 var rightAnswers=0;
 var wrongAnswers=0;
 var questionNumber=0;
 var buttonsLeft= [1,2,3,4]
-var correctAnswerButton
+var correctAnswerButton;
+var buttonClickedThisRound = false;
 
 var questionObject = {
 
@@ -33,13 +34,21 @@ var questionObject = {
 // Functions
 
 function decrement() {
-    number--;
-    $("#showTimer").html(number);
-    if (number == 0) {
+    timerNumber--;
+    $("#showTimer").html(timerNumber);
+    if (timerNumber == 0) {
+        buttonClickedThisRound =true; //This will stop any button clicks after the timer is up
+        wrongAnswers++;
         $("#showQuestion").empty();
         $("#showQuestion").append("Time's Up!!!");
         clearInterval(intervalId);
-
+        setTimeout(function(){
+            $("#showQuestion").empty();
+            $("#showQuestion").append("The correct answer was "+questionObject.answerArray[questionNumber-1]);      
+        
+        
+        }, 3000); 
+        
         // set a timeout and call next question here
         // then set a new interval
         
@@ -49,15 +58,10 @@ function decrement() {
 function callQuestion(){
 
     setTimeout(function(){ //I don't understand why I need a timeout function here, but the question wasn't rendering without it
-
+        buttonClickedThisRound = false;
         $("#showQuestion").empty();
         $("#showQuestion").append(questionObject.questionArray[questionNumber]);
-    
-    //write answers to buttons here
         callButton()
-    
-
-
         setTimeout(function(){questionNumber++}, 0);  
     }, 0);
 }
@@ -86,6 +90,7 @@ function callButton(){
 
 
 function newGame(){
+    timerNumber = 10;
     rightAnswers=0;
     wrongAnswers=0;
     questionNumber=0;
@@ -99,25 +104,31 @@ function newGame(){
 }
 
 
+// Run Game
+
 
 newGame()
 
 $(document).ready(function() {
     $(".btn").on("click", function(){
-        // console.log(event.click)
-        console.log(event.currentTarget.id);
-        console.log(correctAnswerButton);
-        // console.log("button clicked");
-        // debugger
-
-        if (event.currentTarget.id == "butt"+correctAnswerButton){
-            console.log("Right Answer");
+        clearInterval(intervalId);
+        if(buttonClickedThisRound==false){// This is to ensure that only one button click is registered each round
+            if (event.currentTarget.id == "butt"+correctAnswerButton){
+                $("#showQuestion").empty();
+                $("#showQuestion").append("Correct!!!");
+                rightAnswers++;
+            }
+            else{
+                $("#showQuestion").empty();
+                $("#showQuestion").append("Wrong Answer");
+                setTimeout(function(){
+                    $("#showQuestion").empty();
+                    $("#showQuestion").append("The correct answer was "+questionObject.answerArray[questionNumber-1]);
+                }, 1500);
+                wrongAnswers++;
+            }
         }
-        else{
-            console.log("Wrong Answer");
-        }
-
+        buttonClickedThisRound =true;
     });
 });
 
-// <button type="button" class="btn btn-primary mt-4" id="butt1">Button 1</button>
