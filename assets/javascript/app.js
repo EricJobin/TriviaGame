@@ -13,9 +13,9 @@ var buttonClickedThisRound = false;
 var questionObject = {
 
     questionArray: [
-        "The answer is Jack",
-        "The answer is blue",
-        "The answer is 42",
+        "Click on Jack",
+        "Click on blue",
+        "Click on 42",
     ],
     answerArray: [
         "Jack",
@@ -28,8 +28,6 @@ var questionObject = {
         q2: ["33","69","3",],
     },
 };
-
-
 
 // Functions
 
@@ -45,27 +43,21 @@ function decrement() {
         setTimeout(function(){
             $("#showQuestion").empty();
             $("#showQuestion").append("The correct answer was "+questionObject.answerArray[questionNumber-1]);      
-        
-        
-        }, 3000); 
-        
-        // set a timeout and call next question here
-        // then set a new interval
-        
+            setTimeout(function(){checkEndGame()}, 1500);
+        }, 1500);
     }
 }
 
 function callQuestion(){
-
     setTimeout(function(){ //I don't understand why I need a timeout function here, but the question wasn't rendering without it
         buttonClickedThisRound = false;
         $("#showQuestion").empty();
         $("#showQuestion").append(questionObject.questionArray[questionNumber]);
         callButton()
-        setTimeout(function(){questionNumber++}, 0);  
+        setTimeout(function(){questionNumber++}, 0);
+        setTimeout(function(){intervalId = setInterval(decrement, 500)}, 0);
     }, 0);
 }
-
 
 function callButton(){
     buttonsLeft= [1,2,3,4];
@@ -86,21 +78,30 @@ function callButton(){
     }
 }
 
-
-
-
 function newGame(){
     timerNumber = 10;
     rightAnswers=0;
     wrongAnswers=0;
     questionNumber=0;
-
     callQuestion()
+}
 
+function checkEndGame(){
+    if (questionNumber >= questionObject.questionArray.length){
+        //Gave Over
+        $("#showQuestion").empty();
+        $("#showQuestion").append("Game Over");
+        setTimeout(function(){
+            $("#showQuestion").append("<br>Correct Answers: "+rightAnswers);
+            $("#showQuestion").append("<br>Wrong Answers:   "+wrongAnswers);
+        }, 500);
 
-    setTimeout(function(){intervalId = setInterval(decrement, 500)}, 0);
-
-
+        // setTimeout(function(){   }, 0);  Call a function in here to set up a new game by clicking a button
+    }
+    else{
+        callQuestion()
+        timerNumber = 10;
+    }
 }
 
 
@@ -117,6 +118,7 @@ $(document).ready(function() {
                 $("#showQuestion").empty();
                 $("#showQuestion").append("Correct!!!");
                 rightAnswers++;
+                setTimeout(function(){checkEndGame()}, 1500);
             }
             else{
                 $("#showQuestion").empty();
@@ -126,9 +128,13 @@ $(document).ready(function() {
                     $("#showQuestion").append("The correct answer was "+questionObject.answerArray[questionNumber-1]);
                 }, 1500);
                 wrongAnswers++;
+                setTimeout(function(){checkEndGame()}, 3000);
             }
         }
         buttonClickedThisRound =true;
     });
 });
 
+
+
+// setTimeout(function(){checkEndGame()}, 0);
