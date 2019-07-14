@@ -1,7 +1,7 @@
 // Javascript for Trivia Game
 
 // Global Variables
-var timerNumber = 10;
+var timerNumber = 20;
 var intervalId;
 var rightAnswers=0;
 var wrongAnswers=0;
@@ -13,19 +13,34 @@ var buttonClickedThisRound = false;
 var questionObject = {
 
     questionArray: [
-        "Click on Jack",
-        "Click on blue",
-        "Click on 42",
+        "Who is the Outer God known as The Black Goat of the Woods with a Thousand Young, who gave birth to, among other things, the Dark Young?",
+        "This Outer God knows the gate, and is the gate. They are the key and the guardian of the gate. Past, present, future, are all in one in them. They know where the Old Ones broke through of old, and where They shall break through again. Of whom do I speak?",
+        "Know also as the Blind Idiot God, the Nuclear Chaos, the Daemon Sultan, this being is believed to sleep at the center of everything, and should it ever awake, the universe, which is but its dream, shall disappear. Who is this?",
+        "Who acts as a messenger for the Outer Gods and has a thousand other forms, including The Crawling Chaos, The Black Pharaoh, The Haunter of the Dark and The Faceless God?",
+        "What is the name of the book that was written in the 8th century, bound in flesh, and written in human blood, that contains the history of that which came before man, and knowledge that man was not meant to know?",
+        "What is the name of the city that is characterized by bizarre cyclopean architecture and non-Euclidean geometry, that is located deep under the Pacific Ocean, and is where Great Cthulhu sleeps?",
+        "What is the unspeakable name of the one who is also known as The Unspeakable One, Him Who Is Not to be Named, The King in Yellow and The Yellow Sign?",
+        "What is the name for the extra-dimensional creatures capable of breaking into our dimension at any point where an angle is formed, that feed on their victims with hollow proboscises?",
     ],
     answerArray: [
-        "Jack",
-        "Blue",
-        "42",
+        "Shub-Niggurath",
+        "Yog-Sothoth",
+        "Azathoth",
+        "Nyarlathotep",
+        "The Necronomicon",
+        "R'lyeh",
+        "Hastur",
+        "Hounds of Tindalos",
     ],
     wrongAnswers: {
-        q0: ["Paul","Peter","Philip",],
-        q1: ["Red","Yellow","Brown",],
-        q2: ["33","69","3",],
+        q0: ["Tshup Aklathep","Azathoth","Lavinia Whateley",],
+        q1: ["Vinz Clortho","Gozer","Zuul",],
+        q2: ["The Wind Fish","The Matrix","Abdul Alhazred",],
+        q3: ["The Black Goat","Seshat","Minerva",],
+        q4: ["The Voynich Manuscript","The Codex Gigas","Pnakotic Manuscripts",],
+        q5: ["Atlantis","Dunwich","Heracleion",],
+        q6: ["Voldemort","Candyman","Mary Tudor",],
+        q7: ["Strix","Vampire Ground Finch","Shai-Hulud",],
     },
 };
 
@@ -55,7 +70,7 @@ function callQuestion(){
         $("#showQuestion").append(`<h2>${questionObject.questionArray[questionNumber]}<h2>`);
         callButton()
         setTimeout(function(){questionNumber++}, 0);
-        setTimeout(function(){intervalId = setInterval(decrement, 500)}, 0);
+        setTimeout(function(){intervalId = setInterval(decrement, 800)}, 0); //Here is the only place where the timer is set
     }, 0);
 }
 
@@ -80,7 +95,7 @@ function callButton(){
 
 function newGame(){
     $("#gameOverDiv").empty();
-    timerNumber = 10;
+    timerNumber = 20;
     rightAnswers=0;
     wrongAnswers=0;
     questionNumber=0;
@@ -100,7 +115,7 @@ function checkEndGame(){
     }
     else{ // If game is not over, call the next game, reset timer to 10
         callQuestion()
-        timerNumber = 10;
+        timerNumber = 20;
     }
 }
 
