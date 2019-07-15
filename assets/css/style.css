@@ -2,22 +2,23 @@
 
 /* font-family: 'Special Elite', cursive;
 font-family: 'Macondo Swash Caps', cursive; */
-
+body{
+    background-color: #c4e99b;
+    background-image: url(../images/white_leather.png);
+}
 .btn{
     min-width: 150px;
+    background-color: #003366;
 }
-
 h1{/* Time Up, Game Over, Correct!!!, Wrong Answer */
     text-align: center;
     font-family: 'Special Elite', cursive;
 }
-
 h2{/* Questions, Scores, Correct answers after wrong guess */
     font-family: 'Special Elite', cursive;
     margin-left: 5%;
     font-size: 30px;
 }
-
 h3{/* Timer */
     font-family: 'Special Elite', cursive;
     position: absolute;
@@ -26,37 +27,23 @@ h3{/* Timer */
     transform: translate(-50%,-50%);
     font-size: 50px;
 }
-
 .titleText{
     font-size: 25px;
 }
-
 h4{ /* Mostly just for the word Mythos */
     display:inline;
     font-family: 'Macondo Swash Caps', cursive;
 }
-
 .toprow{
     height: 50vh;
-
 }
-
 .jumbotron{
     padding: 10px;
     margin-top: 10px;
     position: relative;
-    
 }
-
 #pictureUsed{
     object-fit:contain;
     height:50vh;
     width:100%;
-    
 }
-
-
-
-
-
-/*  */
