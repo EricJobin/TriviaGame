@@ -92,7 +92,7 @@ function callQuestion(){
         setTimeout(function(){questionNumber++}, 0);
         setTimeout(function(){intervalId = setInterval(decrement, 1000)}, 0); //Here is the only place where the timer is set
     }, 0);
-} //pictureDiv
+}
 
 function callButton(){
     buttonsLeft= [1,2,3,4];
@@ -139,12 +139,9 @@ function checkEndGame(){
     }
 }
 
-
 // Run Game
 
-
 newGame()
-
 $(document).ready(function() {
     $(".btn").on("click", function(){
         clearInterval(intervalId);
@@ -172,7 +169,3 @@ $(document).ready(function() {
         newGame()
     });
 });
-
-
-// <div id="gameOverDiv"></div>
-// setTimeout(function(){checkEndGame()}, 0);
