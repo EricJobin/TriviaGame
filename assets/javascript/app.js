@@ -49,17 +49,16 @@ var questionObject = {
         q9: ["August Derleth","Robert W. Chambers","Lord Dunsany",],
     },
     pictureArray: [
-        //<img src='assets/images/darkyoung.jpg'>
         "<img src='assets/images/darkyoung.jpg' id='pictureUsed'>",
         "<img src='assets/images/yog.jpg' id='pictureUsed'>",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
+        "<img src='assets/images/azathoth.jpg' id='pictureUsed'>",
+        "<img src='assets/images/wailing_writher.jpg' id='pictureUsed'>",
+        "<img src='assets/images/book.jpg' id='pictureUsed'>",
+        "<img src='assets/images/rlyeh.jpg' id='pictureUsed'>",
+        "<img src='assets/images/hastur.jpg' id='pictureUsed'>",
+        "<img src='assets/images/hounds.jpg' id='pictureUsed'>",
+        "<img src='assets/images/miskatonic.jpg' id='pictureUsed'>",
+        "<img src='assets/images/hpl.jpg' id='pictureUsed'>",
     ],
 };
 
