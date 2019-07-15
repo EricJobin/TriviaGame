@@ -50,9 +50,9 @@ var questionObject = {
     },
     pictureArray: [
         "<img src='assets/images/darkyoung.jpg' id='pictureUsed'>",
-        "<img src='assets/images/yog.jpg' id='pictureUsed'>",
+        "<img src='assets/images/yogsothoth.jpg' id='pictureUsed'>",
         "<img src='assets/images/azathoth.jpg' id='pictureUsed'>",
-        "<img src='assets/images/wailing_writher.jpg' id='pictureUsed'>",
+        "<img src='assets/images/nyarlathotep.jpg' id='pictureUsed'>",
         "<img src='assets/images/book.jpg' id='pictureUsed'>",
         "<img src='assets/images/rlyeh.jpg' id='pictureUsed'>",
         "<img src='assets/images/hastur.jpg' id='pictureUsed'>",
