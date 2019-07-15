@@ -15,13 +15,13 @@ var questionObject = {
     questionArray: [
         "Who is the Outer God known as The Black Goat of the Woods with a Thousand Young, who gave birth to, among other things, the Dark Young?",
         "This Outer God knows the gate, and is the gate. They are the key and the guardian of the gate. Past, present, future, are all one in them. Of whom do I speak?",
-        "Known also as the Blind Idiot God, the Nuclear Chaos, the Daemon Sultan, this being is slumbers, and should it ever awake, the universe, which is but its dream, shall disappear. Who is this?",
+        "Known also as the Blind Idiot God, the Nuclear Chaos, the Daemon Sultan, this being slumbers and should it ever awake, the universe, which is but its dream, shall disappear. Who is this?",
         "Who acts as a messenger for the Outer Gods and has a thousand other forms, including The Crawling Chaos, The Black Pharaoh, The Haunter of the Dark and The Faceless God?",
-        "What is the name of the book that was written in the 8th century, bound in flesh, and written in human blood, that contains the history of that which came before man, and knowledge that man was not meant to know?",
+        "What is the name of the book that was written in the 8th century, bound in flesh and written blood, that contains the history of that which came before man, and knowledge that man was not meant to know?",
         "What is the name of the city that is characterized by bizarre cyclopean architecture and non-Euclidean geometry, that is located deep under the Pacific Ocean, and is where Great Cthulhu sleeps?",
-        "What is the unspeakable name of the one who is also known as The Unspeakable One, Him Who Is Not to be Named, The King in Yellow and The Yellow Sign?",
+        "What is the name of the one who is known as The Unspeakable One, Him Who Is Not to be Named, The King in Yellow and The Yellow Sign?",
         "What is the name for the extra-dimensional creatures capable of breaking into our dimension at any point where an angle is formed, that feed on their victims with hollow proboscises?",
-        "Miskatonic University is located in located in which fictional city?",
+        "Miskatonic University is located in which fictional city?",
         "Often cited as the creator of the Mythos, this author is known for such stories as ‘The Call of Cthulhu’, ‘At the Mountains of Madness’ and ‘The Shadow over Innsmouth’.",
     ],
     answerArray: [
@@ -48,6 +48,19 @@ var questionObject = {
         q8: ["Gotham","Ankh-Morpork","Beantown",],
         q9: ["August Derleth","Robert W. Chambers","Lord Dunsany",],
     },
+    pictureArray: [
+        //<img src='assets/images/darkyoung.jpg'>
+        "<img src='assets/images/darkyoung.jpg' id='pictureUsed'>",
+        "<img src='assets/images/yog.jpg' id='pictureUsed'>",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+    ],
 };
 
 // Functions
@@ -63,7 +76,7 @@ function decrement() {
         clearInterval(intervalId);
         setTimeout(function(){
             $("#showQuestion").empty();
-            $("#showQuestion").append("<h2>The correct answer was "+questionObject.answerArray[questionNumber-1]+"</h2>");      
+            $("#showQuestion").append("<h2>The correct answer was "+questionObject.answerArray[questionNumber-1]+"</h2>");
             setTimeout(function(){checkEndGame()}, 1500);
         }, 1500);
     }
@@ -74,11 +87,13 @@ function callQuestion(){
         buttonClickedThisRound = false;
         $("#showQuestion").empty();
         $("#showQuestion").append(`<h2>${questionObject.questionArray[questionNumber]}<h2>`);
+        $("#pictureDiv").empty();
+        $("#pictureDiv").append(questionObject.pictureArray[questionNumber]);
         callButton()
         setTimeout(function(){questionNumber++}, 0);
-        setTimeout(function(){intervalId = setInterval(decrement, 800)}, 0); //Here is the only place where the timer is set
+        setTimeout(function(){intervalId = setInterval(decrement, 1000)}, 0); //Here is the only place where the timer is set
     }, 0);
-}
+} //pictureDiv
 
 function callButton(){
     buttonsLeft= [1,2,3,4];

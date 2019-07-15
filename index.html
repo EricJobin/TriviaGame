@@ -7,6 +7,7 @@
     <title>Trivial Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Macondo+Swash+Caps|Special+Elite&display=swap" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -20,35 +21,41 @@
 <body>
 
     <div class="container">
-        <div class="row toprow "> <!--row 1-->
-            <div class="col-3 col-lg-3 jumbotron textbox shadow" id ="showTimer">
+        <div class="row"> <!--Header Row-->
+            <div class="col-12 titleText">
+                A <h4>Mythos</h4> Quiz
+            </div>
+        </div>
+        <div class="row toprow "> <!--Timer and Question Row-->
+            <div class="col-2 jumbotron textbox shadow" id ="showTimer">
                 Time
             </div>
-            <div class="col-9 col-lg-9 jumbotron textbox shadow" id="showQuestion">
+            <div class="col-6 jumbotron textbox shadow" id="showQuestion">
                 Question
             </div>
-        </div> <!--row close-->
+            <div class="col-4" id='pictureDiv'>
+                <!-- <img src='images/darkyoung.jpg'> -->
+                <!-- <img src='assets/images/darkyoung.jpg'> -->
+            </div>
+        </div>
         
-        <div class="row"> <!--row 2-->
-            <div class="col-6 col-lg-6">
+        <div class="row"> <!--Row for Buttons-->
+            <div class="col-6">
                 <button type="button" class="btn btn-primary mt-4" id="butt1">Button 1</button><br>
                 <button type="button" class="btn btn-primary mt-4" id="butt2">Button 2</button>
             </div>
-            <div class="col-6 col-lg-6">
+            <div class="col-6">
                 <button type="button" class="btn btn-primary mt-4" id="butt3">Button 3</button><br>
                 <button type="button" class="btn btn-primary mt-4" id="butt4">Button 4</button>
             </div>
-        </div> <!--row close-->
+        </div>
         
-        <div class="row"> <!--row 2-->
-            <div class="col-12 col-lg-12"></div> <!--columns, add to 12-->
-        </div> <!--row close-->
-        <div id="gameOverDiv"></div>
-
-    </div> <!--container close -->
-
-
-
+        <div class="row">
+            <div class="col-12">
+                <div id="gameOverDiv"></div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

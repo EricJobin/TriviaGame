@@ -1,36 +1,43 @@
 /* CSS for Trivia Game */
 
-
+/* font-family: 'Special Elite', cursive;
+font-family: 'Macondo Swash Caps', cursive; */
 
 .btn{
     min-width: 150px;
 }
 
 h1{/* Time Up, Game Over, Correct!!!, Wrong Answer */
-    /* border: 1px black solid; */
     text-align: center;
-
-
-
+    font-family: 'Special Elite', cursive;
 }
 
 h2{/* Questions, Scores, Correct answers after wrong guess */
-    /* border: 1px black solid; */
+    font-family: 'Special Elite', cursive;
     margin-left: 5%;
+    font-size: 30px;
 }
 
 h3{/* Timer */
+    font-family: 'Special Elite', cursive;
     position: absolute;
     top: 50%;
     left:50%;
     transform: translate(-50%,-50%);
     font-size: 50px;
+}
 
+.titleText{
+    font-size: 25px;
+}
+
+h4{ /* Mostly just for the word Mythos */
+    display:inline;
+    font-family: 'Macondo Swash Caps', cursive;
 }
 
 .toprow{
     height: 50vh;
-    /* position: relative; */
 
 }
 
@@ -40,5 +47,16 @@ h3{/* Timer */
     position: relative;
     
 }
+
+#pictureUsed{
+    object-fit:contain;
+    height:50vh;
+    width:100%;
+    
+}
+
+
+
+
 
 /*  */
